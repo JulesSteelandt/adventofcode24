@@ -7,3 +7,4 @@ try {
 } catch (error) {
   console.error('Erreur lors de la lecture ou du parsing du fichier :', error);
 }
+pr
