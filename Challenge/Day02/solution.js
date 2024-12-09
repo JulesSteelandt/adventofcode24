@@ -14,30 +14,33 @@ const readDataFile = async () => {
   }
 };
 
+/// /////////////
+// P1
+/// /////////////
 const part1 = (data) => {
   let safe = 0;
-  let is_safe = false;
+  let isSafe = false;
 
   data.forEach((row, i) => {
-    if (is_safe) safe += 1;
+    if (isSafe) safe += 1;
     let sign = 1;
     let compare = 0;
-    is_safe = true;
+    isSafe = true;
 
     row.forEach((cell, j) => {
-      if (!is_safe) return true;
+      if (!isSafe) return true;
       if (j === 0) {
         compare = cell;
       } else {
         if (j === 1) sign = Math.sign(compare - cell);
-        const new_sign = Math.sign(compare - cell);
+        const newSign = Math.sign(compare - cell);
         if (
-          new_sign === 0 ||
-          new_sign !== sign ||
+          newSign === 0 ||
+          newSign !== sign ||
           Math.abs(compare - cell) > 3 ||
           Math.abs(compare - cell) < 1
         ) {
-          is_safe = false;
+          isSafe = false;
         }
         compare = cell;
       }
@@ -48,42 +51,45 @@ const part1 = (data) => {
   console.log(safe);
 };
 
+/// /////////////
+// P2
+/// /////////////
 const part2 = (data) => {
   let safe = 0;
-  let is_safe = false;
+  let isSafe = false;
 
   data.forEach((row, i) => {
-    if (is_safe) safe += 1;
+    if (isSafe) safe += 1;
     let sign = 1;
     let compare = 0;
-    is_safe = false;
+    isSafe = false;
 
     for (let k = 0; k < row.length; k++) {
-      let del_safe = true;
+      let delSafe = true;
 
       const newRow = row.filter((_, j) => j !== k);
 
       newRow.forEach((cell, j) => {
-        if (is_safe) return true;
+        if (!delSafe) return true;
         if (j === 0) {
           compare = cell;
         } else {
           if (j === 1) sign = Math.sign(compare - cell);
-          const new_sign = Math.sign(compare - cell);
+          const newSign = Math.sign(compare - cell);
           if (
-            new_sign === 0 ||
-            new_sign !== sign ||
+            newSign === 0 ||
+            newSign !== sign ||
             Math.abs(compare - cell) > 3 ||
             Math.abs(compare - cell) < 1
           ) {
-            del_safe = false;
+            delSafe = false;
           } else {
             compare = cell;
           }
         }
       });
-      if (del_safe) {
-        is_safe = true;
+      if (delSafe) {
+        isSafe = true;
         break;
       }
     }

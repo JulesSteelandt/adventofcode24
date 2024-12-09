@@ -9,7 +9,9 @@ const readDataFile = async () => {
     const listOne = data.map(([a, b]) => a);
     const listTwo = data.map(([a, b]) => b);
 
-    // 1
+    /// /////////////
+    // P1
+    /// /////////////
     const sortedOne = listOne.slice().sort((a, b) => a - b);
     const sortedTwo = listTwo.slice().sort((a, b) => a - b);
 
@@ -24,7 +26,9 @@ const readDataFile = async () => {
     console.log('Calcul partie 1 :');
     console.log(result());
 
-    // 2
+    /// /////////////
+    // P2
+    /// /////////////
 
     let multi = 0;
     const occurrences = {};
