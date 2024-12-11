@@ -1,6 +1,6 @@
 # Advent of Code 2024 🎄
 
-Bienvenue dans mon dépôt *Advent of Code 2024* ! Ce projet regroupe mes solutions aux défis quotidiens proposés par [Advent of Code](https://adventofcode.com/2024), un événement annuel de programmation qui se déroule du 1er au 25 décembre.
+Bienvenue dans mon dépôt _Advent of Code 2024_ ! Ce projet regroupe mes solutions aux défis quotidiens proposés par [Advent of Code](https://adventofcode.com/2024), un événement annuel de programmation qui se déroule du 1er au 25 décembre.
 
 ## 📚 Description
 
@@ -9,6 +9,7 @@ Advent of Code est une série de puzzles de programmation publiés chaque jour p
 ## 🚀 Structure du projet
 
 Chaque jour correspond à un dossier contenant :
+
 - `data.txt` : les données du puzzle.
 - `solution.js` : la solution codée.
 - `README.md` (optionnel) : explications sur l'approche ou la solution.
@@ -22,3 +23,4 @@ AdventOfCode2024/
 │   ├── data.txt
 │   └── solution.js
 └── ...
+```
